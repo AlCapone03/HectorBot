@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const PREFIX = '$';
-
-
+//konsollen sier at boten er klar
+//til bruk på serveren.
 client.once('ready', () => {
     console.log('Hector is online')
 });
