@@ -5,5 +5,5 @@ Test fra mobil mvh Arvid
 # Hovesoverskrift
 ## Underoverskrift
 
-*fisk
-*storfekjøtt 
+* fisk
+* storfekjøtt 
