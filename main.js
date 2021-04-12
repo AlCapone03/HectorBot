@@ -44,10 +44,10 @@ client.on('message', message=>{
             message.channel.bulkDelete(args[1]);
             break;
         case 'play':
-
+			console.log("inside play-function");
             function play(connection, message){ 
                 var server = servers[message.guild.id];
-                
+                console.log(server);
                 server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
                 
                 server.queue.shift();
