@@ -44,9 +44,11 @@ client.on('message', message=>{
             message.channel.bulkDelete(args[1]);
             break;
         case 'play':
+			//Legger inn en print her for debugging :) -Arvid
 			console.log("inside play-function");
             function play(connection, message){ 
                 var server = servers[message.guild.id];
+				//Legger inn en print her for debugging :) -Arvid
                 console.log(server);
                 server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
                 
@@ -54,8 +56,12 @@ client.on('message', message=>{
                 
                 server.dispatcher.on("end", function(){
                     if(server.queue[0]){
+						//Legger inn en print her for debugging :) -Arvid
+						console.log("Found server.queue[0]")
                         play(connection, message);
                     }else {
+						//Legger inn en print her for debugging :) -Arvid
+						console.log("Did not find server.queue[0]")
                         connection.disconnect();
                     }
                 })
